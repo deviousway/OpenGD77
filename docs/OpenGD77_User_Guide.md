@@ -1221,3 +1221,37 @@ Then, you can add in DMR IDs into the database by selecting an ID prefix. You ca
 *Note.* Because the memory size used for the DMR ID is limited, you can store more DMR IDs if you assign fewer characters per ID. Depending on actual information, the firmware can store approximately 13,000-26,000 IDs in its user database.
 
 As the firmware supports Talker Alias, you might find this sufficient -- the firmware will display callsign and name data retrieved from the DMR stream, for user IDs not stored in your radio's User Database.
+
+#### Reading and Writing Your Codeplug on Archlinux
+Install mono:
+
+```
+sudo pacman -S mono
+```
+
+Download firmwareloader_linux.zip and CodePlug from release assets and unzip it
+**Important** YOU NEED TO INSTALL 99-gd77.rules for you distro **this will not work just from root user**
+because need to unbind radio for Bootloader 
+after this you need to add your user to  usbmux and uucp group and reload udev rules 
+
+```
+sudo gpasswd -a $YORUSERNAME  usbmux
+sudo gpasswd -a $YORUSERNAME  uucp
+sudo udevadm control --reload
+```
+
+cd to the directory and run 
+**For GUI interface**
+
+```
+mono FirmwareLoader-Linux.exe 
+```
+
+**For CLI interface**
+mono FirmwareLoader-Linux.exe DM-1801 OpenDM1801.sgl 
+where
+**FirmwareLoader-Linux.exe** path to the FirmwareLoader-Linux.exe
+**DM-1801** model of the radio (possible values is (GD-77,GD-77Z,DM-1801,RD-5R)
+**OpenDM1801.sgl** path to the codeplug file
+
+
