@@ -1229,7 +1229,7 @@ Install mono:
 sudo pacman -S mono
 ```
 
-Download firmwareloader_linux.zip and .sgl file that match your radio model from release assets and unzip it
+Download firmwareloader_linux.zip and unzip it.
 **Important** YOU NEED TO INSTALL 99-gd77.rules for you distro **this will not work just from root user**
 because need to unbind radio for Bootloader 
 after this you need to add your user to  usbmux and uucp group and reload udev rules 
@@ -1247,7 +1247,13 @@ cd to the directory and run
 mono FirmwareLoader-Linux.exe 
 ```
 
-**For CLI interface**
+If for some reason you need to install specific version or need to make offline instalation:  
+- download .sgl file that match your radio model from release assets
+- run FirmwareLoader 
+- select "Select File & Update" option.
+
+**Via CLI interface** 
+
 mono FirmwareLoader-Linux.exe DM-1801 OpenDM1801.sgl 
 where
 **FirmwareLoader-Linux.exe** path to the FirmwareLoader-Linux.exe
