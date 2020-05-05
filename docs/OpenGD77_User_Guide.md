@@ -1222,14 +1222,14 @@ Then, you can add in DMR IDs into the database by selecting an ID prefix. You ca
 
 As the firmware supports Talker Alias, you might find this sufficient -- the firmware will display callsign and name data retrieved from the DMR stream, for user IDs not stored in your radio's User Database.
 
-#### Reading and Writing Your Codeplug on Archlinux
+#### Update firmware on Archlinux
 Install mono:
 
 ```
 sudo pacman -S mono
 ```
 
-Download firmwareloader_linux.zip and CodePlug from release assets and unzip it
+Download firmwareloader_linux.zip and .sgl file that match your radio model from release assets and unzip it
 **Important** YOU NEED TO INSTALL 99-gd77.rules for you distro **this will not work just from root user**
 because need to unbind radio for Bootloader 
 after this you need to add your user to  usbmux and uucp group and reload udev rules 
